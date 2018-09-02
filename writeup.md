@@ -45,12 +45,12 @@ The state vector consists of the first six elements of the model components list
 
 If the state vector and the control inputs are known, we can calculate the values of the new state variables in *dt* time using the following equations:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<sub>t+1</sub> = x<sub>t</sub> + v<sub>t</sub> \* cos(&psi;<sub>t</sub>)  \* dt
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y<sub>t+1</sub> = y<sub>t</sub> + v<sub>t</sub> \* sin(&psi;<sub>t</sub>)  \* dt
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&psi;<sub>t+1</sub> = &psi;<sub>t</sub> + v<sub>t</sub> / Lf \*   &delta;<sub>t</sub> \* dt
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<sub>t+1</sub> = v<sub>t</sub> + a<sub>t</sub> \* dt
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cte<sub>t+1</sub> = cte<sub>t</sub> + v<sub>t</sub> \* sin(e&psi;<sub>t</sub>) \* dt
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&psi;<sub>t+t</sub> = e&psi;<sub>t</sub> + v<sub>t</sub> / Lf  \* &delta;<sub>t</sub> \* dt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x<sub>t+1</sub> = x<sub>t</sub> + v<sub>t</sub> \* cos(&psi;<sub>t</sub>)  \* dt<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y<sub>t+1</sub> = y<sub>t</sub> + v<sub>t</sub> \* sin(&psi;<sub>t</sub>)  \* dt<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&psi;<sub>t+1</sub> = &psi;<sub>t</sub> + v<sub>t</sub> / Lf \*   &delta;<sub>t</sub> \* dt<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v<sub>t+1</sub> = v<sub>t</sub> + a<sub>t</sub> \* dt<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cte<sub>t+1</sub> = cte<sub>t</sub> + v<sub>t</sub> \* sin(e&psi;<sub>t</sub>) \* dt<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e&psi;<sub>t+t</sub> = e&psi;<sub>t</sub> + v<sub>t</sub> / Lf  \* &delta;<sub>t</sub> \* dt<br/>
 
 cte<sub>t</sub> is the difference between the itinary and the current vehicle position. If we have a polynomial *f* which describes the refrence line, then the cross track error at time *t* is: cte<sub>t</sub> = f(x<sub>t</sub>) - y<sub>t</sub>
 
