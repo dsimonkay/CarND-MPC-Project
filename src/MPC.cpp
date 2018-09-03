@@ -9,7 +9,7 @@ using CppAD::AD;
 // Setting constants
 const size_t N = 10;
 const double dt = 0.1;
-const double REFERENCE_V = 90.0;
+const double REFERENCE_V = 82.0;
 
 // Penalty weight constants for mpc tuning.
 // The most important thing is to stay on track -- thus keep cte and epsi minimized.
@@ -18,7 +18,7 @@ const double REFERENCE_EPSI_WEIGHT = 7000.0;
 // Okay, these terms are not that important, actually
 const double REFERENCE_V_WEIGHT = 5.0;
 const double ACTUATOR_DELTA_WEIGHT = 1.0;
-const double ACTUATOR_A_WEIGHT = 1.0;
+const double ACTUATOR_A_WEIGHT = 0.0;
 // Penalizing delta change in order to avoid sudden movements on the steering wheel
 const double CHANGE_DELTA_WEIGHT = 100.0;
 // Okay, but we might want to break suddenly, so the penalty here is not as high as for the delta change
