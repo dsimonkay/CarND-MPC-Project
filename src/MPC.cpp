@@ -9,7 +9,7 @@ using CppAD::AD;
 // Setting constants
 const size_t N = 10;
 const double dt = 0.1;
-const double REFERENCE_V = 80;  // MPH
+const double REFERENCE_V = 90.0;
 
 // Penalty weight constants for mpc tuning.
 // The most important thing is to stay on track -- thus keep cte and epsi minimized.

@@ -15,6 +15,9 @@ using json = nlohmann::json;
 // defining the latency of the actuators (in milliseconds)
 const int ACTUATOR_LATENCY = 100;
 
+// reference speed (MPH)
+const double REFERENCE_V = 90.0;
+
 // This value assumes the model presented in the classroom is used.
 //
 // It was obtained by measuring the radius formed by running the vehicle in the
@@ -177,9 +180,13 @@ int main() {
           // y remains unchanged, as there's no motion along the Y axis in the car's coordinate system.
           // In other words: y[t+1] = y[t] + v[t] * sin(psi[t]) ==> equals to zero because sin(psi) = 0
           psi -= v / Lf * delta * latency;      // psi_[t+1] = psi[t] - v[t] / Lf * delta[t] * dt
-          v += a * latency;                     // v_[t+1] = v[t] + a[t] * dt
+
           cte += v * sin(epsi) * latency;       // cte[t+1] = f(x[t]) - y[t] + v[t] * sin(epsi[t]) * dt
           epsi -= v * delta / Lf * latency;     // epsi[t+1] = psi[t] - psides[t] - v[t] * delta[t] / Lf * dt
+
+          v += a * latency;                     // v_[t+1] = v[t] + a[t] * dt
+          // the speed must not exceed the reference value
+          v = std::min(v, REFERENCE_V);
 
           // Defining the state vector, then 
           Eigen::VectorXd state(6);
