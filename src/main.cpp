@@ -16,7 +16,7 @@ using json = nlohmann::json;
 const int ACTUATOR_LATENCY = 100;
 
 // reference speed (MPH)
-const double REFERENCE_V = 90.0;
+const double REFERENCE_V = 82.0;
 
 // This value assumes the model presented in the classroom is used.
 //
